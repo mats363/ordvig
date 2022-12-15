@@ -12,25 +12,27 @@ type AttemptModel = {
 export const AppContext = createContext<any>(boardDefault);
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  // const answer: string = answers[Math.floor(Math.random() * answers.length)];
-  const answer: string = "FLUGA";
+  const answer: string = answers[Math.floor(Math.random() * answers.length)];
+
   return { props: { answer } };
 };
 
-export default function App(answer: string) {
+export default function App() {
   const [board, setBoard] = useState<any[][]>(boardDefault);
   const [currentAttempt, setCurrentAttempt] = useState<any>({
     attempt: 0,
     letterPosition: 0,
   });
 
-  const onSelectLetter = (val: any | null) => {
+  const correctWord: string = "FLUGA";
+
+  const onSelectLetter = (keyVal: string) => {
     if (currentAttempt.letterPosition > 4) return;
     const newBoard = [...board];
     if (currentAttempt) {
       newBoard[currentAttempt?.attempt][
         currentAttempt && currentAttempt?.letterPosition
-      ] = val;
+      ] = keyVal;
       setBoard(newBoard);
       setCurrentAttempt({
         ...currentAttempt,
@@ -66,7 +68,7 @@ export default function App(answer: string) {
           onSelectLetter,
           onDelete,
           onEnter,
-          answer,
+          correctWord,
         }}
       >
         <div className="container-sm flex justify-center items-center flex-col">
