@@ -22,7 +22,7 @@ export const Letter: React.FC<letterProps> = ({ position, attempt }) => {
   const letterState = correct ? "Correct" : almost ? "Almost" : "Error";
 
   return (
-    <div className="h-12 w-12 text-2xl flex border-2 border-gray-300 p-1 m-1 box-border justify-center items-center">
+    <div className="h-16 w-16 text-4xl flex border-2 border-gray-300 p-1 m-1 box-border justify-center items-center">
       {letter}
     </div>
   );
