@@ -20,7 +20,7 @@ export const Key: React.FC<KeyProps> = ({ val, isBig }) => {
   };
   return (
     <div
-      className={`bg-blue ${isBig ? "bg-white" : "bg-white"}`}
+      className={`bg-blue ${isBig ? "bg-grey" : "bg-grey"} p-1 m-1 border-4`}
       onClick={handleClick}
     >
       {val}
