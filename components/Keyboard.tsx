@@ -46,7 +46,7 @@ export const Keyboard: React.FC = () => {
   return (
     <div
       id="container"
-      className="flex flex-col items-center text-3xl m-4"
+      className="flex flex-col items-center m-4"
       onKeyDown={handleKeyboard}
     >
       <div className="p-1">
