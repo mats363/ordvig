@@ -3,6 +3,7 @@ import React, { createContext, useState } from "react";
 import Board from "../components/Board";
 import { Keyboard } from "../components/Keyboard";
 import { boardDefault } from "./words";
+import OrdvigBank from "./";
 
 type AttemptModel = {
   attempt: number;
