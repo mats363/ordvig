@@ -3,7 +3,6 @@ import React, { createContext, useState } from "react";
 import Board from "../components/Board";
 import { Keyboard } from "../components/Keyboard";
 import { boardDefault } from "./words";
-import OrdvigBank from "./";
 
 type AttemptModel = {
   attempt: number;
@@ -18,7 +17,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
   return { props: { answer } };
 };
 
-export default function App() {
+export default function App(answer: string) {
+  console.log(answer[1] + "hej");
   const [board, setBoard] = useState<any[][]>(boardDefault);
   const [currentAttempt, setCurrentAttempt] = useState<any>({
     attempt: 0,
